@@ -51,8 +51,22 @@ git reset head~^
 git revert 커밋 ID
 : 기존 커밋된 사항이 지워지는건 아님
 
-
+# 작업중인사항을 임시저장
+git stash
+# 임시저장한 작업사항을 다시 적용
+git stash pop
+# 저장한 작업목록 조회
+git stash list
+# 저장한목록 전체 삭제
+gti stash clear
 
 5번 case
 
 2) 기존 수정본 백업본 만들고 로컬 작업 취소
+
+5번 case에서 stash를 통한 해결책
+git pull origin main => error
+git stash
+git pull origin main -> 변경사항 받아오기
+git stash pop => 충돌 (merge commit은 아님)
+git add . git commit 
