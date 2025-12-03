@@ -60,13 +60,49 @@ git stash list
 # 저장한목록 전체 삭제
 gti stash clear
 
-5번 case
 
-2) 기존 수정본 백업본 만들고 로컬 작업 취소
-
-5번 case에서 stash를 통한 해결책
+★ 5번 case에서 stash를 통한 해결책
 git pull origin main => error
 git stash
 git pull origin main -> 변경사항 받아오기
 git stash pop => 충돌 (merge commit은 아님)
 git add . git commit 
+
+# 가장 최신의 commitID에 tag가 명시
+git tag 태그버전명(v1.10.4)
+# 원격repo에 해당 tag의 release 생성 (commit, push와 상관없이 별도로 함)
+git push origin 태그버전명
+
+v1.10.3
+1: 메이저버전
+10.3 마이너버전
+
+
+# 브랜치 생성
+★ 현재 checkout 되어있는 브랜치를 기준으로 새로운 브랜치 생성 ★
+git branch 브랜치명
+ex) git branch feat/member_list
+★ (현재시점의 commit을 기준으로 브랜치 만듬) ★
+# 브랜치 목록조회
+git branch
+# 특정 브랜치로 전환
+git checkout 브랜치명
+# 브랜치 생성과 전환을 동시에
+git checkout -b 브랜치명
+# 로컬브랜치 삭제(원격은 별도로 삭제)
+git branch -D 브랜치명
+
+
+[예시]
+
+1. 회원가입을 담당
+2. main checkout 및 pull
+3. feat/member 브랜치 생성 
+4. commit ID2개 정도 임의로 생성
+5. origin에 push
+
+
+4. 작업 후 origin/featmember에 push
+(로컬 main에 합치지 않고 origin feat1에 push)
+
+5. PR생성해서 main merge
