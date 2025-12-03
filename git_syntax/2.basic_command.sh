@@ -102,7 +102,7 @@ git branch -D 브랜치명
 - git commit -m "1"
 - git pull origin main
 3. feat/member 브랜치 생성 
-- git branch -b feat/member
+- git checkout -b feat/member
 4. commit ID2개 정도 임의로 생성
 - git commit 2개 생성
 - git push origin feat/member
