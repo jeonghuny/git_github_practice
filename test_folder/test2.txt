@@ -1,7 +1,4 @@
 hello java1
 hello java2
-<<<<<<< HEAD
 hello java3
-=======
-hello java3
->>>>>>> f25de3331e84e7c37ac177096d3ac4b4e03eeb74
+hello java4
