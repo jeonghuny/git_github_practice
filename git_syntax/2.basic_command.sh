@@ -60,13 +60,64 @@ git stash list
 # 저장한목록 전체 삭제
 gti stash clear
 
-5번 case
 
-2) 기존 수정본 백업본 만들고 로컬 작업 취소
-
-5번 case에서 stash를 통한 해결책
+★ 5번 case에서 stash를 통한 해결책
 git pull origin main => error
 git stash
 git pull origin main -> 변경사항 받아오기
 git stash pop => 충돌 (merge commit은 아님)
 git add . git commit 
+
+# 가장 최신의 commitID에 tag가 명시
+git tag 태그버전명(v1.10.4)
+# 원격repo에 해당 tag의 release 생성 (commit, push와 상관없이 별도로 함)
+git push origin 태그버전명
+
+v1.10.3
+1: 메이저버전
+10.3 마이너버전
+
+
+# 브랜치 생성
+★ 현재 checkout 되어있는 브랜치를 기준으로 새로운 브랜치 생성 ★
+git branch 브랜치명
+ex) git branch feat/member_list
+★ (현재시점의 commit을 기준으로 브랜치 만듬) ★
+# 브랜치 목록조회
+git branch
+# 특정 브랜치로 전환
+git checkout 브랜치명
+# 브랜치 생성과 전환을 동시에
+git checkout -b 브랜치명
+# 로컬브랜치 삭제(원격은 별도로 삭제)
+git branch -D 브랜치명
+
+
+[예시]
+
+1. 회원가입을 담당
+2. main checkout 및 pull
+- git checkout main
+- git add .
+- git commit -m "1"
+- git pull origin main
+3. feat/member 브랜치 생성 
+- git checkout -b feat/member
+4. commit ID2개 정도 임의로 생성
+- git commit 2개 생성
+- git push origin feat/member
+5. origin에 push후 PR
+- 원격에 가서 Pull requests 작성
+ (PR 올리는 것이라고 함.)
+ 그 다음 PR에 대해 확인후 팀장이 Merge함 (PR생성해서 main merge하는 것)
+6. 한번쓴 브랜치는 재사용 X
+git checkout main
+git pull origin main 한 후 다시 브랜치 만들어 사용
+
+
+
+1. main에서 git pull
+2. git branch 만들고
+3. 작업하고
+4. origin에 올리고
+5. PR올린다.
