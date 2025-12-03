@@ -16,7 +16,6 @@ git commit
 git log 
 UI에서도 볼수 있다. changes, graph      
 git log --oneline
-: 로그 한줄로 보기
 
 # head하단의 로그만 보이는 것이 아니라 모든 commit이력을 조회
 # head : 현재 사용하고 있는(checkout)하고 있는 commitID를 의미
@@ -42,37 +41,3 @@ git push origin 브랜치명 -- force
 git checkout 커밋ID
 # 특정 브랜치로의 전환
 git checkout 브랜치명
-
-# pull은 원격사항을 local로 내려받는것(fetch + merge)
-git pull origin amin
-: pull = fetch + merge
-
-# fetch는 변경사항을 local로 가져오되, 병합은 하지 않는것.
-git fetch origin main
-
-# commitID간 또는 브랜치 사이의 비교 명령어
-git diff commitID1 commitID2
-git diff 브랜치1 브랜치2
-
-# fetch한거 병합
-git merge origin/main
-
-____________________________
-원격 저장소 (origin)
-----------------------
-main : A --- B --- C
-
-로컬 저장소
-----------------------
-main        : A --- B      (HEAD)
-origin/main : A --- B --- C
-
-로컬 저장소 (병합 후)
-----------------------
-main (HEAD) : A --- B --- C
-origin/main : A --- B --- C
-____________________________
-
-
-- 원격에 푸쉬된거는 지우는게 불가능하다
-이전껄로 커밋을 다시해서 푸쉬한다 (git revert 커밋ID)
