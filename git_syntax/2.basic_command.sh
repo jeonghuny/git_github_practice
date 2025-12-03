@@ -41,3 +41,14 @@ git push origin 브랜치명 -- force
 git checkout 커밋ID
 # 특정 브랜치로의 전환
 git checkout 브랜치명
+
+
+# 가장 최신의 커밋 취소
+git reset head~1
+git reset head~^
+
+# 이미 push commit사항을 되돌리는 새로운 commit 생성 // D->C로 되돌리기 D'(=F) 로 다시 커밋
+git revert 커밋 ID
+: 기존 커밋된 사항이 지워지는건 아님
+
+
