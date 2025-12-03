@@ -33,6 +33,10 @@ git log (기록 확인)
 1) 경로 설정 후
 2) git clone https://github.com/jeonghuny/git_github_practice.git
 
+[Staging Area]
+커밋 할 내용들 다 모아 놓음 (아직 커밋 전)
+
+
 
 # .은 모든 변경사항을 의미. 특정파일만 add하는 것도 가능
 # add는 staging area로 변경사항을 이동
@@ -67,7 +71,7 @@ git config --global user.email "email명"
 # git 설정정보 조회
 git config --list
 
-# git프로젝트 생성방법2가지
+# ★ git프로젝트 생성방법2가지 ★
 # 1.원격에서 repo생성 후 clone
 # 2.로컬에 이미 만들어진 프로젝트 
 # 2-1).git폴더를 생성
@@ -82,7 +86,7 @@ git remote add origin 원격지주소
 
 
 ★ [저장소를 지운다면]
-★ 숨겨진 .git 폴더에
+★ 숨겨진폴더의 .git 폴더에
 ★ 1) 원격정보
 ★ 2) commit ID 남아 있음
 
@@ -91,7 +95,7 @@ git remote add origin 원격지주소
 ..git폴더가 로컬이 원격으로부터 clone 받을때 자동으로 만들어짐
 
 # master로 만들어지는 이유
-로컬 git은 .git을 만든다면 master로 만듬
+로컬 git은 .git을 만든다면 master로 만들어짐
 원격에서 로컬로 clone받을때는 .git의 branch를 main으로 만듬
 
 # .git 폴더가 있는 위치에서만 add commit등 가능하다.
@@ -116,9 +120,19 @@ git clone https://github.com/kimseonguk197/kafka-practice.git
 git init
 git remote add origin https://github.com/jeonghuny/test2.git
 git checkout -b main # main 브랜치 생성 및 변경
+ ★ add commit push 한번 해줘야됨 (변경이력 commit 해야됨!)
 # git add, git commit, git push 작업 진행
+
 
 # .gitignore 파일은 git추적목록에서 제외 대상 나열
 # 주로 빌드된 파일 또는 중요암호 등이 담긴 파일을 제외한다.
 # 만약 이미 git에서 추적되고 있는 파일을 제외하려면 캐시 삭제 필요
 git rm -r --cached . 
+
+
+
+
+git status : workingdirectory, staging
+git log : local repository
+
+git commit -am "커밋메세지" : add 없이 바로 커밋

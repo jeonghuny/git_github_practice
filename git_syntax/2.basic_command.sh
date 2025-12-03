@@ -21,10 +21,12 @@ git log --oneline
 # head : 현재 사용하고 있는(checkout)하고 있는 commitID를 의미
 git log --all
 : origin/main이 main(head)보다 위에 있을경우에 모든 로그를 조회 ★노이해
+: git log는 Head 하위만 조회됨
+ (원격에서 변경한 사항이 있는데 내가 아직 반영을 안한 경우)
 
 ___________________________
 (HEAD -> main, origin/main) 
-HEAD: 현재 체크아웃되어 있는 위치 → 지금 내가 작업 중인 커밋
+HEAD: 현재 체크아웃되어 있는 위치 → 지금 내가 작업 중인 커밋 (Head를 이동할 수 있다.)
 main: 로컬 브랜치 이름
 origin/main: 원격 저장소(GitHub)의 main 브랜치 위치
 의미: 현재 로컬 main 브랜치가 origin/main과 동일한 상태라는 뜻
@@ -35,3 +37,7 @@ git push origin 브랜치명
 # 충돌발생시 충돌무시하고, 로컬기준의 코드를 원격에 덮어쓰기(절대 사용하지 말것)
 git push origin 브랜치명 -- force
 
+# 특정 commit ID로의 전환
+git checkout 커밋ID
+# 특정 브랜치로의 전환
+git checkout 브랜치명
